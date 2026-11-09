@@ -1,0 +1,145 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:07.462
+En este vídeo entenderás cómo ve un antivirus avanzado lo que ocurre en un equipo, y las técnicas para no ser visto.
+
+2
+00:00:07.462 --> 00:00:17.312
+La diferencia entre antivirus clásico y moderno, los sensores de Windows como amsi y la telemetría, el enganche en memoria, y por qué la evasión hoy va de comportamiento.
+
+3
+00:00:18.294 --> 00:00:22.081
+Entender al defensor es el primer paso para evadirlo.
+
+4
+00:00:22.031 --> 00:00:30.944
+El antivirus clásico detecta por firmas: se pregunta si este fichero coincide con un virus conocido; es un portero con una lista de caras fichadas.
+
+5
+00:00:30.944 --> 00:00:41.656
+El antivirus moderno, el e de erre, detecta por comportamiento: se pregunta si esta secuencia de acciones parece un ataque; es un detective que observa conductas sospechosas.
+
+6
+00:00:41.656 --> 00:00:44.956
+La diferencia cambia la evasión por completo.
+
+7
+00:00:44.956 --> 00:00:49.031
+Contra el clásico, a menudo basta con ofuscar el fichero.
+
+8
+00:00:49.031 --> 00:00:53.731
+Contra el moderno, eso no basta: hay que cambiar el comportamiento.
+
+9
+00:00:53.731 --> 00:01:00.969
+Por eso el senior no piensa cómo oculto mi ejecutable, sino qué secuencia de acciones no delatará un patrón malicioso.
+
+10
+00:01:01.936 --> 00:01:13.198
+Amsi, la interfaz de escaneo antimalware, es un micrófono que Windows coloca en sus motores de scripts para que el antivirus escuche lo que se va a ejecutar, aunque venga cifrado u ofuscado.
+
+11
+00:01:13.198 --> 00:01:17.311
+Antes, ofuscabas un script y el antivirus no lo leía.
+
+12
+00:01:17.311 --> 00:01:23.286
+Ahora, justo antes de ejecutar, amsi lo entrega descifrado al antivirus para que lo escanee.
+
+13
+00:01:23.286 --> 00:01:30.498
+La evasión consiste en silenciar ese micrófono: hacer que la función que escanea devuelva siempre un resultado limpio.
+
+14
+00:01:30.498 --> 00:01:36.711
+Es un juego del gato y el ratón: Microsoft lo endurece, los atacantes buscan nuevas vías.
+
+15
+00:01:36.711 --> 00:01:45.648
+No necesitas memorizar un truco concreto, que caduca; sí entender qué hace amsi y por qué hay que neutralizarlo para ejecutar scripts sin ser visto.
+
+16
+00:01:46.634 --> 00:01:54.396
+La telemetría de eventos de Windows, que se abrevia e te doble uve, es el sistema interno que registra qué hace cada proceso.
+
+17
+00:01:54.396 --> 00:02:02.021
+Muchos antivirus modernos escuchan esa telemetría para ver, por ejemplo, cargas sospechosas o llamadas peligrosas.
+
+18
+00:02:02.021 --> 00:02:08.984
+Si amsi es el micrófono de lo que vas a ejecutar, esta telemetría es la cámara de seguridad de lo que ya está pasando.
+
+19
+00:02:08.984 --> 00:02:14.646
+Las técnicas de evasión buscan cegar esa telemetría para que el antivirus deje de recibirla.
+
+20
+00:02:14.646 --> 00:02:21.171
+Igual que con amsi, es un pulso constante: Microsoft la protege, los operadores buscan huecos.
+
+21
+00:02:21.171 --> 00:02:28.821
+Entender estos dos sensores explica cómo un antivirus moderno ve un equipo, y cegarlos es gran parte de la evasión en Windows.
+
+22
+00:02:29.796 --> 00:02:38.321
+Muchos antivirus modernos se enganchan a las funciones que usan los programas para pedir cosas a Windows, como crear procesos o inyectar memoria.
+
+23
+00:02:38.321 --> 00:02:46.346
+Así interceptan y analizan cada llamada sospechosa; a esto se le llama enganche, o hooking, y ocurre en la zona de usuario.
+
+24
+00:02:46.346 --> 00:02:51.696
+El problema para el atacante es que, si llamas de forma normal, el antivirus te ve.
+
+25
+00:02:51.696 --> 00:02:53.771
+Dos soluciones.
+
+26
+00:02:53.771 --> 00:03:00.333
+El desenganche, o unhooking: restaurar las funciones originales de Windows para esquivar la intercepción.
+
+27
+00:03:00.333 --> 00:03:05.983
+Y las llamadas directas al sistema: hablar con el núcleo saltándose la capa enganchada.
+
+28
+00:03:05.983 --> 00:03:16.971
+La idea senior para la entrevista es que los antivirus vigilan sobre todo en la zona de usuario, y estas técnicas buscan comunicarse con el sistema sin pasar por los puntos que el antivirus observa.
+
+29
+00:03:17.926 --> 00:03:21.301
+La evasión perfecta y permanente no existe.
+
+30
+00:03:21.251 --> 00:03:26.038
+El objetivo realista del senior es no generar el patrón que dispara la alerta.
+
+31
+00:03:26.038 --> 00:03:32.351
+Prefiere lo legítimo: una acción con un binario del propio Windows levanta menos que un ejecutable raro.
+
+32
+00:03:32.351 --> 00:03:41.176
+Minimiza las acciones más ruidosas, como las inyecciones, los volcados de memoria de credenciales y los escaneos, que son lo más vigilado.
+
+33
+00:03:41.176 --> 00:03:48.838
+Piensa como el detector: qué regla saltaría con esto; y si no lo sabes, pruébalo en tu laboratorio con el mismo antivirus.
+
+34
+00:03:48.838 --> 00:03:57.588
+Y acepta que pueden detectarte: por eso existen la trazabilidad y la deconfliction, y detectar también es un resultado valioso del ejercicio.
+
+35
+00:03:57.588 --> 00:04:04.138
+Todas estas técnicas se practican en laboratorios propios y autorizados, para medir y mejorar la detección.
+
+36
+00:04:04.138 --> 00:04:06.951
+Vamos con la ejecución sigilosa.

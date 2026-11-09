@@ -1,0 +1,133 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:09.750
+En este vídeo descubrirás que Active Directory es un grafo de relaciones, y que casi siempre hay un camino oculto de un usuario normal a administrador de dominio.
+
+2
+00:00:09.750 --> 00:00:16.024
+Bloodhound lo dibuja; el senior sabe leerlo y explotarlo, y también usarlo para la remediación.
+
+3
+00:00:16.974 --> 00:00:23.724
+La gran idea de este vídeo: el directorio activo no es una lista de usuarios, es una red de relaciones.
+
+4
+00:00:23.674 --> 00:00:30.061
+Este usuario es administrador local de ese equipo; este grupo puede cambiar la contraseña de aquel otro.
+
+5
+00:00:30.061 --> 00:00:33.474
+Esas relaciones encadenadas forman caminos.
+
+6
+00:00:33.474 --> 00:00:43.211
+Y aquí está lo clave: casi siempre existe una ruta no evidente de un usuario cualquiera hasta administrador de dominio, saltando por permisos mal configurados.
+
+7
+00:00:43.211 --> 00:00:46.911
+A simple vista no se ve; como grafo, sí.
+
+8
+00:00:46.911 --> 00:00:56.786
+Bloodhound es la herramienta que convierte el directorio en ese grafo visual y calcula los caminos más cortos al objetivo. Cambió para siempre la auditoría de directorio activo.
+
+9
+00:00:57.736 --> 00:01:03.198
+El grafo tiene nodos, que son las cosas, y aristas, que son las relaciones.
+
+10
+00:01:03.148 --> 00:01:08.111
+Los nodos son usuarios, grupos, equipos, políticas y dominios.
+
+11
+00:01:08.111 --> 00:01:15.923
+Las aristas describen la relación: pertenece a un grupo, es administrador local de un equipo, tiene una sesión iniciada ahí.
+
+12
+00:01:15.923 --> 00:01:24.223
+Las más valiosas para el atacante son las relaciones de permisos, como control total o la capacidad de modificar los permisos de un objeto.
+
+13
+00:01:24.223 --> 00:01:30.673
+Esas relaciones significan tengo control sobre este objeto, y suelen ser el escalón oculto hacia el dominio.
+
+14
+00:01:30.673 --> 00:01:36.011
+Saber reconocer una relación peligrosa en el grafo es la habilidad clave de este nivel.
+
+15
+00:01:36.986 --> 00:01:42.536
+Para dibujar el grafo, un recolector consulta el directorio y recoge toda la información.
+
+16
+00:01:42.486 --> 00:01:53.173
+El recolector clásico, sharpaund, obtiene los objetos, las pertenencias a grupos, las sesiones y los permisos, y genera un fichero comprimido que se importa en bloodhound.
+
+17
+00:01:53.173 --> 00:02:01.923
+Pero cuidado con la seguridad operacional: la recogida completa puede ser ruidosa, porque hace muchísimas consultas y toca muchas sesiones.
+
+18
+00:02:01.923 --> 00:02:11.136
+El senior usa métodos selectivos y sigilosos, recogiendo solo lo necesario y evitando tocar todas las sesiones, para no alertar al equipo defensor.
+
+19
+00:02:11.136 --> 00:02:16.898
+Enumerar es necesario, pero enumerar con prudencia es lo que distingue al operador senior.
+
+20
+00:02:17.892 --> 00:02:22.604
+Bloodhound te enseña el camino, y saber leerlo es la habilidad clave.
+
+21
+00:02:22.554 --> 00:02:24.767
+Imagina esta ruta.
+
+22
+00:02:24.767 --> 00:02:28.317
+Paco pertenece al grupo de soporte de informática.
+
+23
+00:02:28.317 --> 00:02:34.354
+Ese grupo tiene permiso para cambiar la contraseña de una cuenta de administración de copias de seguridad.
+
+24
+00:02:34.354 --> 00:02:38.554
+Esa cuenta es administradora local de un servidor de ficheros.
+
+25
+00:02:38.554 --> 00:02:45.817
+Y en ese servidor hay una sesión iniciada de un administrador de dominio, cuyas credenciales se pueden robar de memoria.
+
+26
+00:02:45.817 --> 00:02:56.367
+El senior lee esto como una escalera: con Paco cambio la contraseña de la cuenta de copias, que es administradora del servidor, donde robo las credenciales del administrador de dominio.
+
+27
+00:02:56.367 --> 00:02:59.267
+Paso a paso hasta el control total.
+
+28
+00:03:00.262 --> 00:03:05.712
+Bloodhound no solo sirve para atacar; en el informe se vuelve una guía de remediación.
+
+29
+00:03:05.662 --> 00:03:10.437
+Para atacar, eliges el camino más corto y sigiloso hacia el objetivo.
+
+30
+00:03:10.437 --> 00:03:19.974
+Para defender, le muestras al cliente las relaciones peligrosas que hay que cortar: quitar administradores locales innecesarios, arreglar permisos mal puestos.
+
+31
+00:03:19.974 --> 00:03:30.187
+Y para priorizar, identificas los cuellos de botella: algunos nodos aparecen en muchísimas rutas, así que, si los arreglas, cierras muchos caminos de golpe.
+
+32
+00:03:30.187 --> 00:03:43.599
+En la entrevista, una respuesta senior es: el directorio es un grafo, casi siempre hay un camino oculto a administrador de dominio, uso bloodhound para encontrar el más corto y, en el informe, para señalar qué relaciones cortar.
+
+33
+00:03:43.599 --> 00:03:46.412
+Vamos con los ataques de Kerberos.

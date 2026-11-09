@@ -1,0 +1,153 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:12.812
+En este vídeo verás cómo los atacantes convierten el baile de tickets de Kerberos en robo de credenciales y escalada. El ataque estrella, el Kerberoasting; su primo el as repe roasting; y el abuso de delegación.
+
+2
+00:00:12.812 --> 00:00:17.337
+Y, en cada caso, la defensa que recomendarás en el informe.
+
+3
+00:00:18.318 --> 00:00:24.480
+Kerberos es seguro por diseño, pero su funcionamiento deja rendijas que los atacantes explotan.
+
+4
+00:00:24.430 --> 00:00:29.605
+La mayoría de ataques no rompen Kerberos: abusan de cómo entrega los tickets.
+
+5
+00:00:29.605 --> 00:00:35.130
+Recuerda el parque de atracciones: la pulsera de identidad y la entrada a cada servicio.
+
+6
+00:00:35.130 --> 00:00:43.655
+Varios ataques consisten en pedir tickets de forma perfectamente legítima y luego atacarlos sin conexión, offline, sin tocar nada roto.
+
+7
+00:00:43.655 --> 00:00:49.905
+Esto es importante para la seguridad operacional, porque atacar offline no genera ruido en el dominio.
+
+8
+00:00:49.905 --> 00:00:55.980
+Entender esta idea, que se abusa del sistema en vez de romperlo, es la clave de todo el vídeo.
+
+9
+00:00:56.968 --> 00:01:00.193
+El ataque más famoso es el Kerberoasting.
+
+10
+00:01:00.143 --> 00:01:02.830
+Se basa en una idea sencilla.
+
+11
+00:01:02.830 --> 00:01:07.193
+Las cuentas de servicio tienen un identificador llamado ese pe ene.
+
+12
+00:01:07.193 --> 00:01:12.455
+Cualquier usuario del dominio puede pedir una entrada de servicio para ese servicio.
+
+13
+00:01:12.455 --> 00:01:17.280
+Esa entrada va cifrada con el hash de la contraseña de la cuenta de servicio.
+
+14
+00:01:17.280 --> 00:01:23.043
+Así que la extraes y la crackeas sin conexión: si la contraseña es débil, la recuperas.
+
+15
+00:01:23.043 --> 00:01:28.230
+Funciona porque muchas cuentas de servicio tienen contraseñas débiles que no caducan.
+
+16
+00:01:28.230 --> 00:01:35.368
+Y lo mejor para el atacante: el crackeo es offline, no genera intentos de login fallidos, así que es invisible.
+
+17
+00:01:35.368 --> 00:01:39.468
+Solo necesitas un usuario de dominio cualquiera para empezar.
+
+18
+00:01:39.468 --> 00:01:49.105
+La defensa, para el informe: contraseñas largas y aleatorias, o cuentas gestionadas por el propio directorio, y vigilar peticiones masivas de tickets.
+
+19
+00:01:50.114 --> 00:01:56.864
+Una variante ataca cuentas con una mala configuración concreta: la preautenticación de Kerberos desactivada.
+
+20
+00:01:56.814 --> 00:02:04.939
+Normalmente, para pedir tu pulsera de identidad, debes probar primero que conoces la contraseña; eso es la preautenticación.
+
+21
+00:02:04.939 --> 00:02:13.151
+Si una cuenta tiene esa protección desactivada, cualquiera puede pedir un dato cifrado con su contraseña, y crackearlo sin conexión.
+
+22
+00:02:13.151 --> 00:02:18.926
+Lo llamativo es que no necesitas credenciales previas: solo el nombre de la cuenta vulnerable.
+
+23
+00:02:18.926 --> 00:02:25.876
+Es menos común que el Kerberoasting, porque requiere esa mala configuración, pero cuando aparece es acceso gratis.
+
+24
+00:02:25.876 --> 00:02:31.389
+La defensa es simple: no desactivar la preautenticación y usar contraseñas fuertes.
+
+25
+00:02:32.364 --> 00:02:40.289
+La delegación permite que un servicio actúe en nombre de un usuario, por ejemplo un servidor web que accede a una base de datos como tú.
+
+26
+00:02:40.289 --> 00:02:44.051
+Mal configurada, es una vía de escalada potente.
+
+27
+00:02:44.051 --> 00:02:54.876
+La delegación sin restricciones hace que el servidor guarde la pulsera de identidad de quien se conecta: si logras que un administrador se conecte, le robas la pulsera; es muy peligrosa.
+
+28
+00:02:54.876 --> 00:03:00.326
+La restringida está limitada a ciertos servicios, pero con trucos puede abusarse.
+
+29
+00:03:00.326 --> 00:03:07.989
+Y la basada en recursos permite que, si puedes escribir cierto atributo de un equipo, te hagas pasar por cualquiera contra él.
+
+30
+00:03:07.989 --> 00:03:16.826
+No necesitas memorizar cada variante; sí saber que la delegación mal configurada permite suplantar a otros usuarios, incluidos administradores.
+
+31
+00:03:17.806 --> 00:03:23.206
+Estos ataques entregan credenciales o tickets, que alimentan el resto de la intrusión.
+
+32
+00:03:23.156 --> 00:03:31.831
+Tras un Kerberoasting exitoso, te preguntas si esa cuenta de servicio es privilegiada: a veces son administradoras locales o incluso de dominio.
+
+33
+00:03:31.831 --> 00:03:36.406
+Reutilizas esa credencial para acceder a más equipos y servicios.
+
+34
+00:03:36.406 --> 00:03:40.806
+Y vuelves a bloodhound para ver qué abre esa cuenta y seguir el camino.
+
+35
+00:03:40.806 --> 00:03:49.818
+La belleza, para el atacante, del Kerberoasting es que solo necesita un usuario de dominio cualquiera para empezar, y el crackeo es invisible.
+
+36
+00:03:49.818 --> 00:03:54.018
+Por eso es de los primeros movimientos tras el acceso inicial.
+
+37
+00:03:54.018 --> 00:03:58.956
+Todo esto se practica solo en laboratorios propios o engagements autorizados.
+
+38
+00:03:58.956 --> 00:04:01.643
+Vamos con la escalada a dominio.

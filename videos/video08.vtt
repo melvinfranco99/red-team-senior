@@ -1,0 +1,137 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.200
+En este vídeo verás las herramientas que orquestan el control: los frameworks de mando y control.
+
+2
+00:00:06.150 --> 00:00:12.637
+El concepto de beacon, con su sueño y su variación, y los perfiles maleables que disfrazan el tráfico.
+
+3
+00:00:12.637 --> 00:00:17.212
+Y cómo elegir y endurecer un framework según la detección del cliente.
+
+4
+00:00:18.198 --> 00:00:28.385
+Un framework de mando y control es el software que gestiona todos los equipos comprometidos desde un panel: lanza comandos, recibe resultados y gestiona sesiones y payloads.
+
+5
+00:00:28.385 --> 00:00:31.398
+Es el centro de operaciones del Red Team.
+
+6
+00:00:31.398 --> 00:00:40.085
+El estándar comercial es Cobalt Strike, cuyo agente se llama Beacon: muy maduro, pero también muy vigilado por los antivirus avanzados.
+
+7
+00:00:40.085 --> 00:00:44.910
+Sliver es una alternativa de código abierto, moderna y multiplataforma.
+
+8
+00:00:44.910 --> 00:00:51.860
+Mythic es también abierto y modular, con agentes intercambiables, muy flexible para la seguridad operacional.
+
+9
+00:00:51.860 --> 00:00:54.685
+Y hay otros centrados en evasión.
+
+10
+00:00:54.685 --> 00:01:04.285
+Como son tan usados, los defensores aprenden a detectar sus patrones por defecto, así que el trabajo del senior es personalizarlos para que no suenen a lo conocido.
+
+11
+00:01:05.248 --> 00:01:12.310
+El beacon, que significa faro, no mantiene una conexión abierta todo el tiempo, porque eso sería muy visible.
+
+12
+00:01:12.260 --> 00:01:16.748
+En vez de eso, duerme y de vez en cuando llama a casa a por órdenes.
+
+13
+00:01:16.748 --> 00:01:19.260
+Dos parámetros lo definen.
+
+14
+00:01:19.260 --> 00:01:25.410
+El sueño, o sleep, es el tiempo que espera entre cada contacto, por ejemplo sesenta segundos.
+
+15
+00:01:25.410 --> 00:01:32.748
+Y la variación, o jitter, es un porcentaje aleatorio que se le suma o resta, para que no sea un patrón exacto.
+
+16
+00:01:32.748 --> 00:01:38.973
+Un sueño largo con variación imita el tráfico humano y dificulta que el defensor detecte el patrón regular.
+
+17
+00:01:38.973 --> 00:01:46.135
+El compromiso senior: sueño corto es más interactivo pero más detectable; sueño largo es sigiloso pero lento.
+
+18
+00:01:46.135 --> 00:01:49.335
+Se ajusta según la fase de la operación.
+
+19
+00:01:50.306 --> 00:02:01.331
+Un perfil maleable es un fichero que define exactamente cómo se ve el tráfico del beacon: las cabeceras, las rutas, el identificador de navegador, y dónde se esconden los datos.
+
+20
+00:02:01.331 --> 00:02:05.281
+Permite que el canal de control se disfrace de algo normal.
+
+21
+00:02:05.281 --> 00:02:14.243
+Por ejemplo, puedes configurar que el beacon finja ser el tráfico de una aplicación de música, con peticiones a una supuesta interfaz de canciones.
+
+22
+00:02:14.243 --> 00:02:20.181
+Con un perfil así, el defensor ve peticiones a una aplicación corriente, no un beacon.
+
+23
+00:02:20.181 --> 00:02:28.818
+Es una de las piezas clave de la seguridad operacional: dos operaciones con el mismo framework pueden parecer completamente distintas según su perfil.
+
+24
+00:02:29.796 --> 00:02:32.896
+Tres conceptos para completar el cuadro.
+
+25
+00:02:32.846 --> 00:02:40.358
+El listener, u oyente, es el componente del framework que espera las conexiones de los beacons, por el protocolo que sea.
+
+26
+00:02:40.358 --> 00:02:56.821
+Los beacons entre pares, o pe dos pe, son beacons que hablan entre ellos dentro de la red interna, encadenándose, para que solo uno salga a Internet; en una red con quinientos equipos, que solo uno hable con el exterior y el resto se comuniquen internamente levanta muchísima menos sospecha.
+
+27
+00:02:56.821 --> 00:03:08.558
+Y el pivoting consiste en usar un equipo comprometido como puente hacia redes internas que no son accesibles directamente. Los beacons entre pares son, por eso, muy buenos para la seguridad operacional.
+
+28
+00:03:09.526 --> 00:03:14.051
+La elección del framework es una decisión de criterio, no de moda.
+
+29
+00:03:14.001 --> 00:03:23.326
+Primero, qué detecta el cliente: si su antivirus avanzado caza Cobalt Strike por defecto, lo personalizas con un perfil propio o usas otro framework.
+
+30
+00:03:23.326 --> 00:03:33.576
+Segundo, un perfil a medida que cambie los indicadores por defecto, como nombres de tubería, identificador de navegador y rutas, que los defensores tienen fichados.
+
+31
+00:03:33.576 --> 00:03:41.826
+Tercero, ajustar el sueño y la variación según la fase: lento para persistir, más rápido solo cuando operas activamente.
+
+32
+00:03:41.826 --> 00:03:49.451
+Y cuarto, tener un canal de respaldo, un segundo beacon durmiente con un sueño larguísimo, por si queman el principal.
+
+33
+00:03:49.451 --> 00:03:57.801
+En la entrevista, menciona que personalizas el perfil y ajustas estos parámetros: demuestra que entiendes el juego del gato y el ratón.
+
+34
+00:03:57.801 --> 00:04:00.551
+Vamos con la evasión de antivirus.

@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:11.450
+En este vídeo verás cómo saltar de un equipo a otro con las credenciales robadas, parecer un administrador legítimo, tunelizar hacia redes internas, y mantener el acceso sin ser visto.
+
+2
+00:00:11.450 --> 00:00:16.325
+El movimiento lateral es donde la operación avanza hacia las joyas de la corona.
+
+3
+00:00:17.286 --> 00:00:23.661
+El movimiento lateral es saltar de un equipo comprometido a otro, acercándote a las joyas de la corona.
+
+4
+00:00:23.611 --> 00:00:31.623
+La clave es que, con credenciales válidas, no necesitas exploits: usas los mismos mecanismos que un administrador legítimo.
+
+5
+00:00:31.623 --> 00:00:35.061
+Esto es muy bueno para la seguridad operacional.
+
+6
+00:00:35.061 --> 00:00:42.623
+Si te mueves con una herramienta de administración remota y una cuenta de administrador real, pareces un administrador trabajando.
+
+7
+00:00:42.623 --> 00:00:47.248
+El antivirus avanzado ve administrador administra, no ve un ataque.
+
+8
+00:00:47.248 --> 00:00:56.073
+Esta es una diferencia fundamental de mentalidad: el senior prefiere mezclarse con la actividad legítima antes que lanzar un exploit ruidoso que lo delate.
+
+9
+00:00:57.064 --> 00:01:03.901
+En Windows, muchas veces no necesitas la contraseña en claro: basta con su hash o su ticket de Kerberos.
+
+10
+00:01:03.851 --> 00:01:10.164
+El paso del hash consiste en autenticarte usando el hash directamente, sin conocer la contraseña.
+
+11
+00:01:10.164 --> 00:01:16.539
+El paso del ticket consiste en reutilizar un ticket de Kerberos robado de memoria para acceder a servicios.
+
+12
+00:01:16.539 --> 00:01:21.764
+Y hay una variante que usa el hash para obtener una pulsera de identidad legítima.
+
+13
+00:01:21.764 --> 00:01:30.126
+De aquí la importancia de robar credenciales de memoria, del proceso que las guarda: un hash o un ticket abren otras puertas sin crackear nada.
+
+14
+00:01:30.126 --> 00:01:41.464
+La defensa, para el informe: tecnologías de aislamiento de credenciales, gestión de contraseñas de administrador local únicas, y no dejar administradores sembrados por todos los equipos.
+
+15
+00:01:42.434 --> 00:01:49.659
+Con credenciales válidas, hay varias formas de ejecutar en un equipo remoto, y cada una tiene distinto nivel de ruido.
+
+16
+00:01:49.659 --> 00:01:59.034
+La herramienta clásica, pe ese exec, crea un servicio a través del protocolo de ficheros compartidos: es potente pero ruidosa, está muy fichada.
+
+17
+00:01:59.034 --> 00:02:03.809
+La ejecución por instrumentación de Windows es más sigilosa y muy usada.
+
+18
+00:02:03.809 --> 00:02:10.521
+Y la administración remota de Windows es un protocolo legítimo para administradores, así que se mezcla muy bien.
+
+19
+00:02:10.521 --> 00:02:17.084
+Se usan suites como impacket, con sus distintas herramientas, o utilidades específicas de shell remota.
+
+20
+00:02:17.084 --> 00:02:21.934
+El senior elige siempre la menos ruidosa que funcione, no la más cómoda.
+
+21
+00:02:22.884 --> 00:02:30.796
+A menudo la red interesante, con los servidores y las bases de datos, no es accesible directamente desde tu punto de entrada.
+
+22
+00:02:30.796 --> 00:02:34.434
+El pivoting usa un equipo comprometido como puente.
+
+23
+00:02:34.434 --> 00:02:40.496
+Si ese equipo está en dos redes, tunelizas tu tráfico a través de él para alcanzar la red interna.
+
+24
+00:02:40.496 --> 00:02:46.071
+Se hace con un proxy a través del beacon, o reenviando el puerto de un servicio concreto.
+
+25
+00:02:46.071 --> 00:02:49.246
+Herramientas típicas son chisel o ligolo.
+
+26
+00:02:49.246 --> 00:02:55.596
+Así llegas a máquinas que no te ven a ti, porque tu tráfico sale del equipo puente, que sí tiene acceso.
+
+27
+00:02:55.596 --> 00:03:02.471
+Es imprescindible para alcanzar redes segmentadas, que es justo donde las empresas suelen guardar lo más valioso.
+
+28
+00:03:03.454 --> 00:03:11.041
+A nivel de dominio, el abanico de persistencia crece: tickets dorados, certificados, cuentas sembradas.
+
+29
+00:03:10.991 --> 00:03:13.841
+Pero el mensaje senior es el mismo.
+
+30
+00:03:13.841 --> 00:03:19.704
+Usa la mínima persistencia necesaria, porque cada mecanismo es detectable y debe limpiarse.
+
+31
+00:03:19.704 --> 00:03:26.391
+Prefiere lo que se funde con lo normal, como un certificado válido o una cuenta esperable, frente a lo ruidoso.
+
+32
+00:03:26.391 --> 00:03:30.616
+Documenta cada persistencia para la limpieza y la deconfliction.
+
+33
+00:03:30.616 --> 00:03:36.654
+Y piensa en el cliente: una persistencia olvidada es una puerta real para un atacante futuro.
+
+34
+00:03:36.654 --> 00:03:45.279
+La madurez senior se nota aquí: no en cuántas puertas traseras pongo, sino en moverme como un administrador legítimo y dejar el sitio limpio.
+
+35
+00:03:45.279 --> 00:03:47.591
+Vamos a la nube híbrida.

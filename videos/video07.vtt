@@ -1,0 +1,133 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:07.862
+En este vídeo verás la red de carreteras por la que el equipo comprometido habla contigo: la infraestructura de mando y control.
+
+2
+00:00:07.862 --> 00:00:16.537
+Por qué necesita capas, el papel de los redirectores, la reputación de los dominios y técnicas como el domain fronting para pasar desapercibido.
+
+3
+00:00:17.502 --> 00:00:25.877
+El mando y control, que abreviamos ce dos, es el canal por el que el equipo comprometido recibe órdenes y devuelve resultados.
+
+4
+00:00:25.877 --> 00:00:32.027
+El programa en la víctima es el agente, o beacon; el servidor del operador es el team server.
+
+5
+00:00:32.027 --> 00:00:41.439
+Aquí está la clave: si conectaras el beacon directamente a tu servidor, el equipo defensor vería tu dirección, la bloquearía, y tu operación muere.
+
+6
+00:00:41.439 --> 00:00:47.027
+Por eso se construye una infraestructura por capas, para ocultar y proteger al operador.
+
+7
+00:00:47.027 --> 00:00:53.039
+Piensa en un jefe mafioso que nunca llama directamente: usa intermediarios y teléfonos de prepago.
+
+8
+00:00:53.039 --> 00:00:55.964
+Si cae uno, él sigue a salvo.
+
+9
+00:00:56.920 --> 00:01:03.457
+Un redirector es un servidor intermedio que reenvía el tráfico del beacon hacia el team server, ocultándolo.
+
+10
+00:01:03.407 --> 00:01:12.332
+La cadena queda así: el beacon habla con uno o varios redirectores, y estos reenvían al team server, que permanece oculto y nunca se expone.
+
+11
+00:01:12.332 --> 00:01:14.832
+Las ventajas son enormes.
+
+12
+00:01:14.832 --> 00:01:19.532
+Si el equipo defensor quema un redirector, levantas otro y sigues.
+
+13
+00:01:19.532 --> 00:01:24.245
+El servidor de control, y tú, nunca aparecéis directamente.
+
+14
+00:01:24.245 --> 00:01:33.045
+Y los redirectores filtran el tráfico: con reglas adecuadas, solo dejan pasar el que cumple tu perfil, descartando curiosos y escáneres.
+
+15
+00:01:33.045 --> 00:01:36.245
+Es la primera capa de protección del operador.
+
+16
+00:01:37.226 --> 00:01:41.326
+El tráfico de mando y control debe mezclarse con lo normal.
+
+17
+00:01:41.276 --> 00:01:47.538
+Un dominio recién creado y feo levanta sospechas; uno con buena reputación pasa desapercibido.
+
+18
+00:01:47.538 --> 00:01:56.751
+Por eso se usan dominios envejecidos y categorizados, que parezcan de una temática legítima, como noticias o salud, y lleven tiempo registrados.
+
+19
+00:01:56.751 --> 00:02:04.163
+Se usa siempre tráfico cifrado con certificado válido, lo que oculta el contenido del canal y da apariencia normal.
+
+20
+00:02:04.163 --> 00:02:10.663
+Y se imita el tráfico real, para que las peticiones parezcan de un navegador o de una aplicación corriente.
+
+21
+00:02:10.663 --> 00:02:19.788
+Muchos defensores bloquean las categorías no clasificadas, así que tener el dominio bien categorizado como algo inocuo evita ese bloqueo automático.
+
+22
+00:02:20.796 --> 00:02:24.821
+Hay técnicas para esconder a dónde va realmente el tráfico.
+
+23
+00:02:24.771 --> 00:02:38.033
+El domain fronting hace que el tráfico aparente ir a un dominio grande y de confianza, una red de distribución de contenidos, pero internamente se redirige a tu canal de control; es difícil de bloquear sin romper ese servicio enorme.
+
+24
+00:02:38.033 --> 00:02:48.596
+Otra opción es el mando y control sobre servicios legítimos, usando plataformas de mensajería o repositorios de código como canal, de modo que el tráfico se funde con el normal.
+
+25
+00:02:48.596 --> 00:02:57.821
+Y el túnel por de ene ese permite sacar datos en consultas de resolución de nombres cuando todo lo demás está filtrado: es lento, pero muy resistente.
+
+26
+00:02:57.821 --> 00:03:04.471
+La idea senior: el mejor canal es el que el defensor no puede bloquear sin romper algo que la empresa necesita.
+
+27
+00:03:05.446 --> 00:03:10.771
+Una operación de semanas necesita infraestructura que sobreviva a que le quemen piezas.
+
+28
+00:03:10.721 --> 00:03:20.421
+Se separan las funciones: la infraestructura de phishing no es la de mando y control a largo plazo, ni la del canal de emergencia; si cae una, las otras siguen.
+
+29
+00:03:20.421 --> 00:03:25.396
+Se añade redundancia: varios redirectores y dominios listos para rotar.
+
+30
+00:03:25.396 --> 00:03:31.583
+Se automatiza todo con código, usando infraestructura como código, para rehacerla rápido.
+
+31
+00:03:31.583 --> 00:03:37.883
+Y se cuida la higiene: nada en la infraestructura te enlaza a ti ni al cliente, y se destruye al terminar.
+
+32
+00:03:37.883 --> 00:03:52.246
+En la entrevista, ante cómo montarías el mando y control de una operación larga, la respuesta es: capas con redirectores, dominios categorizados sobre tráfico cifrado, canales que se funden con lo legítimo, y redundancia para rotar.
+
+33
+00:03:52.246 --> 00:03:54.533
+Pasemos a los frameworks.

@@ -1,0 +1,5 @@
+produccion/.tmp/
+produccion/gen.log
+produccion/guiones/__pycache__/
+*.log
+node_modules/

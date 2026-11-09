@@ -1,0 +1,153 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:13.350
+En este último vídeo verás lo que de verdad evalúan en un senior: liderar operaciones, mentorizar juniors, tu ruta de certificaciones, y cómo responder a las preguntas difíciles de la entrevista con criterio y honestidad.
+
+2
+00:00:13.350 --> 00:00:15.625
+Es el cierre del curso.
+
+3
+00:00:16.614 --> 00:00:21.001
+Un senior ya no solo hackea: hace que el equipo hackee mejor.
+
+4
+00:00:20.951 --> 00:00:29.364
+El liderazgo técnico consiste en repartir el trabajo según las fortalezas, uno en directorio activo, otro en nube, otro en el informe.
+
+5
+00:00:29.364 --> 00:00:35.051
+En desbloquear a otros: cuando un junior se atasca, orientarle sin hacerle el trabajo.
+
+6
+00:00:35.051 --> 00:00:41.001
+En sostener la calidad: revisar hallazgos, pruebas de concepto e informe antes de entregar.
+
+7
+00:00:41.001 --> 00:00:47.364
+Y en marcar el ritmo y la seguridad operacional de la operación, cuidando que nadie se salga del alcance.
+
+8
+00:00:47.364 --> 00:00:52.951
+En la entrevista senior valoran que sepas multiplicar al equipo, no solo tu brillo individual.
+
+9
+00:00:52.951 --> 00:01:00.514
+La pregunta cómo ayudarías a un junior atascado es muy habitual, y lo que buscan es que enseñes, no que resuelvas por él.
+
+10
+00:01:01.504 --> 00:01:04.704
+Mentorizar bien acelera a todo el equipo.
+
+11
+00:01:04.654 --> 00:01:07.916
+Enseña el porqué, no solo el comando.
+
+12
+00:01:07.916 --> 00:01:13.279
+Revisa con feedback concreto y amable, nunca criticando en público ni humillando.
+
+13
+00:01:13.279 --> 00:01:18.829
+Fomenta el laboratorio y el aprendizaje continuo, en vez de guardarte el conocimiento.
+
+14
+00:01:18.829 --> 00:01:25.329
+Y transmite la ética y la seguridad operacional como valores, no como normas sueltas que se cumplen porque sí.
+
+15
+00:01:25.329 --> 00:01:35.941
+La seguridad ofensiva cambia cada mes, así que un buen senior crea una cultura de aprendizaje: comparte análisis de retos, monta laboratorios internos y normaliza preguntar.
+
+16
+00:01:35.941 --> 00:01:41.529
+Un equipo que aprende junto es mucho más fuerte que una suma de individuos brillantes y aislados.
+
+17
+00:01:42.506 --> 00:01:49.106
+El senior es, a menudo, la cara ante el cliente y el responsable de que la operación salga bien y segura.
+
+18
+00:01:49.056 --> 00:01:54.568
+Antes, define el alcance, los objetivos, las reglas y la autorización.
+
+19
+00:01:54.568 --> 00:02:02.581
+Durante, gestiona el riesgo para no romper producción, mantiene la trazabilidad y el canal de deconfliction con la célula blanca.
+
+20
+00:02:02.581 --> 00:02:08.968
+Después, entrega el informe, el debrief, el purple team, el re-test y la limpieza.
+
+21
+00:02:08.968 --> 00:02:16.368
+Y, siempre, comunica con claridad y expectativas realistas: un Red Team no aprueba ni suspende, mejora.
+
+22
+00:02:16.368 --> 00:02:23.568
+Saber decir esto está fuera del alcance, paremos y consultemos, es una señal de seniority, no de debilidad.
+
+23
+00:02:23.568 --> 00:02:28.668
+La responsabilidad sobre la operación y el cliente es parte inseparable del puesto.
+
+24
+00:02:29.652 --> 00:02:32.577
+La oferta valora certificaciones.
+
+25
+00:02:32.527 --> 00:02:55.552
+Para un perfil que aspira a senior, una ruta coherente sería: el oe ese ce pe como base imprescindible de pentest práctico; la certificación de operaciones de Red Team, muy alineada con este puesto por su foco en mando y control, evasión y directorio activo; la de líder de Red Team, para evasión avanzada y liderazgo; y la de experimentado en explotación, para evasión y pentest avanzado.
+
+26
+00:02:55.552 --> 00:03:00.302
+Hay otras según tu foco, para directorio activo o para web avanzada.
+
+27
+00:03:00.302 --> 00:03:09.127
+En la entrevista, explica una ruta con criterio: tengo la base, preparo la de Red Team Ops por su enfoque, con vistas a la de evasión.
+
+28
+00:03:09.127 --> 00:03:12.639
+Eso suena a plan, no a coleccionar siglas.
+
+29
+00:03:13.630 --> 00:03:19.530
+En una entrevista senior se evalúan tres cosas: profundidad técnica, criterio y madurez.
+
+30
+00:03:19.480 --> 00:03:21.667
+Algunos consejos.
+
+31
+00:03:21.667 --> 00:03:32.630
+Piensa en voz alta: ante un cómo atacarías esto, estructura la respuesta, reconocimiento, acceso, escalada, objetivo, en vez de soltar una herramienta.
+
+32
+00:03:32.630 --> 00:03:41.092
+Usa el método estrella para tus experiencias: situación, tarea, acción, y resultado, destacando qué hiciste tú.
+
+33
+00:03:41.092 --> 00:03:47.967
+Sé honesto: si no sabes algo, dilo y explica cómo lo averiguarías; mentir se nota y se penaliza.
+
+34
+00:03:47.967 --> 00:03:55.442
+Menciona la seguridad operacional, la ética y el impacto sin que te lo pregunten, porque es lo que distingue a un senior.
+
+35
+00:03:55.442 --> 00:04:03.542
+Y ten preparadas tus batallitas: un reto difícil, un directorio comprometido en laboratorio, un informe del que estés orgulloso.
+
+36
+00:04:03.542 --> 00:04:08.680
+Practica en el simulador de entrevista de este módulo, respondiendo en voz alta.
+
+37
+00:04:08.680 --> 00:04:11.180
+Con esto terminas el curso.
+
+38
+00:04:11.180 --> 00:04:15.042
+Mucha suerte: ya piensas como un Red Team senior.

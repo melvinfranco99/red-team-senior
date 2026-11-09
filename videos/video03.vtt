@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:09.325
+En este vídeo verás de dónde sale el a quién imitamos, y los marcos que rigen los ejercicios en banca y sectores críticos en Europa: TIBER y DORA.
+
+2
+00:00:09.325 --> 00:00:14.987
+También quién es quién en un ejercicio dirigido por inteligencia y cómo se define un buen alcance.
+
+3
+00:00:15.942 --> 00:00:21.704
+La inteligencia de amenazas responde a tres preguntas: quién nos atacaría, por qué y cómo.
+
+4
+00:00:21.654 --> 00:00:24.454
+Es la materia prima de la emulación.
+
+5
+00:00:24.454 --> 00:00:28.879
+Se organiza en tres niveles, como la información en una empresa.
+
+6
+00:00:28.879 --> 00:00:36.329
+La estratégica habla de tendencias y motivaciones: a la banca la atacan grupos con motivación económica y algún estado.
+
+7
+00:00:36.329 --> 00:00:40.342
+La operacional dice qué grupos están activos y contra quién.
+
+8
+00:00:40.342 --> 00:00:48.604
+Y la táctica baja al detalle: las técnicas concretas, los dominios y los hashes que el Red Team reproduce y el defensor detecta.
+
+9
+00:00:48.604 --> 00:00:59.317
+El senior lee un informe de inteligencia y lo convierte en un plan de ataque: este grupo entra por phishing, usa este framework de mando y control y hace Kerberoasting; pues lo reproducimos.
+
+10
+00:01:00.304 --> 00:01:04.541
+En banca y sectores críticos no vale hacer un Red Team a ojo.
+
+11
+00:01:04.491 --> 00:01:10.216
+Los reguladores crearon marcos para que el ejercicio sea realista, seguro y comparable.
+
+12
+00:01:10.216 --> 00:01:20.829
+El más importante en Europa es TIBER, impulsado por el Banco Central Europeo: Red Teaming dirigido por inteligencia sobre sistemas en producción, con proveedores acreditados.
+
+13
+00:01:20.829 --> 00:01:30.479
+La regulación DORA, en vigor en la Unión Europea, obliga a las entidades financieras a hacer este tipo de pruebas dirigidas por amenazas, alineadas con TIBER.
+
+14
+00:01:30.479 --> 00:01:34.304
+En el Reino Unido existe CBEST, que fue el pionero.
+
+15
+00:01:34.304 --> 00:01:42.404
+Para trabajar en una consultora con clientes de banca, mencionar TIBER y DORA demuestra que entiendes el contexto real del trabajo en Europa.
+
+16
+00:01:43.370 --> 00:01:47.945
+Un ejercicio dirigido por inteligencia tiene roles muy definidos.
+
+17
+00:01:47.895 --> 00:01:55.470
+La célula blanca, o equipo de control, es un grupo pequeño y secreto del cliente que sabe del ejercicio y lo supervisa.
+
+18
+00:01:55.470 --> 00:02:01.970
+El equipo de defensa, el blue team, no sabe que es un ejercicio; por eso la prueba es realista.
+
+19
+00:02:01.970 --> 00:02:08.007
+El equipo rojo sois vosotros, el proveedor externo que ejecuta el ataque emulando la amenaza.
+
+20
+00:02:08.007 --> 00:02:13.332
+Y hay un proveedor de inteligencia que elabora el informe de amenazas que guía el escenario.
+
+21
+00:02:13.332 --> 00:02:22.395
+Que el equipo defensor no sepa nada es la razón por la que la seguridad operacional importa tanto: si te detectan, el ejercicio mide exactamente eso.
+
+22
+00:02:22.395 --> 00:02:26.682
+Y por eso existe el canal de deconfliction con la célula blanca.
+
+23
+00:02:27.660 --> 00:02:31.660
+El senior participa en definir el alcance junto al cliente.
+
+24
+00:02:31.610 --> 00:02:36.010
+No se trata de toda la empresa, sino de objetivos concretos.
+
+25
+00:02:36.010 --> 00:02:44.597
+Las joyas de la corona son los activos que de verdad importan: la base de datos de clientes, el sistema de pagos, el repositorio de código.
+
+26
+00:02:44.597 --> 00:02:53.560
+Los flags, o escenarios, son objetivos medibles: puede un atacante iniciar una transferencia, puede leer el correo del director general.
+
+27
+00:02:53.560 --> 00:02:59.335
+Las reglas de enfrentamiento fijan horarios, técnicas prohibidas y sistemas intocables.
+
+28
+00:02:59.335 --> 00:03:05.385
+Y, por encima de todo, la autorización firmada: sin papel, no hay operación.
+
+29
+00:03:05.385 --> 00:03:13.535
+Un buen objetivo se redacta en lenguaje de negocio, no técnico: el comité entiende mover dinero, no un fallo en el host de pagos.
+
+30
+00:03:14.518 --> 00:03:20.755
+Operar en producción, como exige TIBER, es delicado, y el senior gestiona ese riesgo.
+
+31
+00:03:20.705 --> 00:03:25.118
+No se lanzan exploits que puedan tumbar un servicio sin acordarlo.
+
+32
+00:03:25.118 --> 00:03:31.630
+Se mantiene trazabilidad total, con marca de tiempo en cada acción, para el debrief y la deconfliction.
+
+33
+00:03:31.630 --> 00:03:39.205
+Se planea la retirada: cómo eliminar el malware, los beacons y la persistencia al terminar, lo que llamamos limpieza.
+
+34
+00:03:39.205 --> 00:03:46.693
+Y si durante la exfiltración accedes a datos reales, se tratan con máxima confidencialidad y se minimiza su manejo.
+
+35
+00:03:46.693 --> 00:03:58.293
+En la entrevista, demostrar que piensas en el riesgo del cliente y en la limpieza posterior te diferencia de alguien que solo sabe hackear. Con esto cerramos la estrategia; pasamos al acceso inicial.

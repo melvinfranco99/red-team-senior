@@ -1,0 +1,109 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:16.312
+En este vídeo verás nociones de seguridad ofensiva en la nube de Amazon, con su modelo de permisos, el abuso del endpoint de metadata, y cómo se demuestra el impacto final: exfiltrar datos de forma controlada, sigilosa y ética, y reportarlo en lenguaje de negocio.
+
+2
+00:00:17.286 --> 00:00:23.836
+En la nube de Amazon, la seguridad es sobre todo gestión de identidades y accesos, lo que llaman i a eme.
+
+3
+00:00:23.786 --> 00:00:29.486
+Igual que en la nube de Microsoft, el juego es de identidades y permisos, no de puertos.
+
+4
+00:00:29.486 --> 00:00:35.198
+Hay usuarios y roles, que son identidades humanas o de servicio con permisos asignados.
+
+5
+00:00:35.198 --> 00:00:41.348
+Hay políticas, documentos que conceden o deniegan acciones, como leer un almacén de objetos.
+
+6
+00:00:41.348 --> 00:00:47.711
+Hay claves de acceso, que son credenciales programáticas: si se filtran, dan acceso directo.
+
+7
+00:00:47.711 --> 00:00:53.186
+Y hay almacenes de objetos que, mal configurados, exponen datos al público.
+
+8
+00:00:53.186 --> 00:01:02.398
+Los errores típicos son: almacenes abiertos, claves filtradas en código o repositorios, y roles con permisos excesivos que permiten escalar.
+
+9
+00:01:03.376 --> 00:01:09.288
+Una joya ofensiva en la nube es el endpoint de metadatos, en una dirección interna especial.
+
+10
+00:01:09.238 --> 00:01:14.426
+Una máquina en la nube puede preguntar ahí por sus propias credenciales temporales.
+
+11
+00:01:14.426 --> 00:01:28.826
+El problema surge si logras una falsificación de petición del lado del servidor, una ese ese erre efe, contra una aplicación en la nube: haces que el servidor pregunte por ti a ese endpoint, y te devuelve las credenciales temporales del rol de la instancia.
+
+12
+00:01:28.826 --> 00:01:32.276
+Con ellas, actúas como ese rol en la nube.
+
+13
+00:01:32.276 --> 00:01:42.063
+Por eso la segunda versión de este servicio de metadatos, que exige un token, mitiga este abuso: menciona que esa versión con token es la defensa recomendada.
+
+14
+00:01:42.063 --> 00:01:46.251
+Una herramienta de post-explotación en la nube de Amazon es paku.
+
+15
+00:01:47.234 --> 00:01:55.196
+Llegar a los datos no basta: el ejercicio demuestra el impacto sacándolos, o probando que se pueden sacar, de forma controlada.
+
+16
+00:01:55.196 --> 00:01:59.696
+Esto corresponde a la táctica de exfiltración del catálogo de técnicas.
+
+17
+00:01:59.696 --> 00:02:09.621
+La idea clave es que es una prueba de impacto, no un robo masivo: a menudo basta con exfiltrar una muestra mínima, o un fichero señuelo, para demostrar que se podía.
+
+18
+00:02:09.621 --> 00:02:18.571
+Los canales pueden ser el propio mando y control, la resolución de nombres, o servicios legítimos de la nube, lo que se funda con el tráfico normal.
+
+19
+00:02:18.571 --> 00:02:27.609
+Y, por seguridad operacional, sacar muchos datos de golpe dispara las alarmas de prevención de fuga de datos; el senior va despacio y con cabeza.
+
+20
+00:02:27.609 --> 00:02:35.959
+Ante la pregunta de si exfiltrarías toda la base de datos, la respuesta senior es no: demuestro el acceso con una muestra mínima acordada.
+
+21
+00:02:39.478 --> 00:02:45.978
+El cierre de la cadena ofensiva es traducir el logro técnico a impacto, que es lo que entiende la dirección.
+
+22
+00:02:45.928 --> 00:02:55.190
+El acceso a un almacén con datos se traduce como: un atacante podría exponer los datos de millones de clientes, con riesgo de multas y daño reputacional.
+
+23
+00:02:55.190 --> 00:03:03.403
+Un rol con permisos excesivos se traduce como: se podría cifrar o borrar toda la infraestructura, provocando la parada del negocio.
+
+24
+00:03:03.403 --> 00:03:09.390
+Y alcanzar administrador de dominio se traduce como: control total del entorno corporativo.
+
+25
+00:03:09.390 --> 00:03:17.503
+Un senior no entrega tengo acceso técnico a esto; entrega demostramos que un atacante podría provocar esta consecuencia de negocio.
+
+26
+00:03:17.503 --> 00:03:21.578
+Eso conecta directamente con el último nivel: el informe.
+
+27
+00:03:21.578 --> 00:03:23.315
+Vamos allá.

@@ -1,0 +1,145 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.600
+En este vídeo entenderás Active Directory, el cerebro de casi toda empresa.
+
+2
+00:00:05.550 --> 00:00:10.375
+Si lo entiendes, entiendes el ochenta por ciento de una intrusión interna.
+
+3
+00:00:10.375 --> 00:00:18.325
+Veremos el dominio, el controlador, la autenticación con Kerberos mediante tickets, y las cuentas que todo atacante persigue.
+
+4
+00:00:19.302 --> 00:00:27.027
+Active Directory, que abreviaremos ade, es el sistema de Microsoft que gestiona quién es quién y quién puede qué en una red Windows.
+
+5
+00:00:27.027 --> 00:00:32.314
+Es, a la vez, la agenda de contactos y el portero de toda la organización.
+
+6
+00:00:32.314 --> 00:00:36.152
+Casi todas las empresas medianas y grandes lo usan.
+
+7
+00:00:36.152 --> 00:00:44.752
+Por eso, en una intrusión interna, comprometer el directorio activo es comprometer la empresa: es la joya de la corona por excelencia.
+
+8
+00:00:44.752 --> 00:00:56.189
+Un detalle importante: cuando te logueas en el ordenador del trabajo con tu usuario, no se valida en tu equipo, lo valida el directorio a través de un servidor especial llamado controlador de dominio.
+
+9
+00:00:57.208 --> 00:01:00.083
+Veamos el vocabulario esencial.
+
+10
+00:01:00.033 --> 00:01:07.120
+Un dominio es un grupo de usuarios y equipos bajo una misma administración: sería un edificio con su conserjería.
+
+11
+00:01:07.120 --> 00:01:14.095
+Un bosque es el conjunto de dominios relacionados, y es la frontera de seguridad real: sería el campus entero.
+
+12
+00:01:14.095 --> 00:01:22.320
+El controlador de dominio es el servidor que guarda la base de datos del directorio y valida los inicios de sesión: la conserjería central.
+
+13
+00:01:22.320 --> 00:01:28.208
+Las unidades organizativas son carpetas para agrupar objetos, como las plantas del edificio.
+
+14
+00:01:28.208 --> 00:01:34.945
+Y las políticas de grupo son reglas que se aplican en masa a equipos y usuarios: el reglamento del edificio.
+
+15
+00:01:34.945 --> 00:01:44.532
+Recuerda: la frontera de seguridad no es el dominio, es el bosque, porque comprometer un dominio puede llevar a todo el bosque a través de las relaciones de confianza.
+
+16
+00:01:45.482 --> 00:01:54.069
+El protocolo ele dap sirve para consultar el directorio: dame todos los usuarios, quién está en el grupo de administradores, qué equipos hay.
+
+17
+00:01:54.069 --> 00:01:59.357
+Gran parte de la enumeración interna es, en el fondo, hacer estas preguntas.
+
+18
+00:01:59.357 --> 00:02:07.169
+Y aquí está lo potente y peligroso: cualquier usuario del dominio, por básico que sea, puede leer casi toda la estructura.
+
+19
+00:02:07.169 --> 00:02:11.069
+Eso le da al atacante un mapa completo nada más entrar.
+
+20
+00:02:11.069 --> 00:02:20.882
+No necesitas ser administrador para enumerar usuarios, grupos y equipos: con una cuenta cualquiera obtenida en el acceso inicial, ya tienes el plano del edificio.
+
+21
+00:02:20.882 --> 00:02:26.657
+Esta lectura amplia por defecto es una característica del diseño que el atacante aprovecha siempre.
+
+22
+00:02:27.636 --> 00:02:33.948
+El directorio autentica sobre todo con Kerberos, y la analogía perfecta es un parque de atracciones.
+
+23
+00:02:33.898 --> 00:02:41.761
+Primero vas a la taquilla, te identificas, y te dan una pulsera: ese es el tique de concesión de tiques, el te ge te.
+
+24
+00:02:41.761 --> 00:02:44.473
+Esa pulsera prueba que eres tú.
+
+25
+00:02:44.473 --> 00:02:56.036
+Cuando quieres subir a una atracción, es decir, acceder a un servicio como un servidor o un recurso, enseñas la pulsera y te dan una entrada concreta para esa atracción: el tique de servicio.
+
+26
+00:02:56.036 --> 00:02:58.998
+Con esa entrada accedes al servicio.
+
+27
+00:02:58.998 --> 00:03:02.573
+El controlador de dominio hace de taquilla central.
+
+28
+00:03:02.573 --> 00:03:11.311
+Entender este baile de tickets es imprescindible, porque casi todos los ataques de directorio abusan de alguna parte de él, como veremos enseguida.
+
+29
+00:03:12.286 --> 00:03:15.698
+Hay cuentas y grupos que todo atacante persigue.
+
+30
+00:03:15.648 --> 00:03:20.461
+Los administradores de dominio tienen control total: son el gran premio.
+
+31
+00:03:20.461 --> 00:03:24.311
+Los administradores de empresa controlan todo el bosque.
+
+32
+00:03:24.311 --> 00:03:32.586
+La cuenta krbtgt es la que firma todos los tickets de Kerberos; su hash permite forjar tickets dorados, de los que hablaremos.
+
+33
+00:03:32.586 --> 00:03:42.273
+Y las cuentas de servicio, que ejecutan los servicios, a menudo tienen privilegios y contraseñas débiles que no caducan, lo que las hace vulnerables al Kerberoasting.
+
+34
+00:03:42.273 --> 00:03:52.873
+El objetivo típico de una intrusión interna es escalar de un usuario normal a administrador de dominio, o al control de la cuenta krbtgt, y desde ahí a las joyas de la corona.
+
+35
+00:03:52.873 --> 00:03:55.786
+Los próximos vídeos muestran cómo.
+
+36
+00:03:55.786 --> 00:03:57.973
+Vamos con BloodHound.

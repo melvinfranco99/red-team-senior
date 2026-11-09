@@ -1,0 +1,153 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.637
+En este vídeo construirás el mapa del objetivo sin tocarlo.
+
+2
+00:00:04.587 --> 00:00:17.462
+Verás por qué el senior prioriza el reconocimiento pasivo, cómo se perfila a las personas y la tecnología, cómo se descubre la superficie externa y cómo se aprovechan las credenciales ya filtradas, siempre de forma legal.
+
+3
+00:00:18.414 --> 00:00:23.651
+El reconocimiento tiene dos modos, y el orden importa por seguridad operacional.
+
+4
+00:00:23.601 --> 00:00:33.376
+El modo pasivo consiste en consultar fuentes públicas sin tocar al objetivo: buscadores, redes profesionales, certificados, registros de dominios.
+
+5
+00:00:33.376 --> 00:00:37.126
+Su huella es casi nula, el objetivo no se entera.
+
+6
+00:00:37.126 --> 00:00:43.914
+El modo activo interactúa con los sistemas, resolviendo nombres o pidiendo páginas, y deja rastro en sus logs.
+
+7
+00:00:43.914 --> 00:00:48.651
+El senior exprime el reconocimiento pasivo al máximo antes de tocar nada.
+
+8
+00:00:48.651 --> 00:00:55.164
+Cuanto más sepas sin interactuar, menos ruido harás después, y más silenciosa será toda la operación.
+
+9
+00:00:56.128 --> 00:01:01.140
+La mayoría de intrusiones reales empiezan por una persona, mediante phishing.
+
+10
+00:01:01.090 --> 00:01:03.828
+Por eso se perfila a la plantilla.
+
+11
+00:01:03.828 --> 00:01:11.615
+Las redes profesionales dan el organigrama, los roles y hasta las tecnologías que usan, porque aparecen en sus ofertas de empleo.
+
+12
+00:01:11.615 --> 00:01:17.140
+De ahí deduces el patrón de correo, normalmente nombre punto apellido arroba empresa.
+
+13
+00:01:17.140 --> 00:01:22.478
+Herramientas como the harvester o hunter recopilan correos y subdominios publicados.
+
+14
+00:01:22.478 --> 00:01:30.828
+Y los metadatos de documentos públicos, como pedefés y ficheros de ofimática, filtran usuarios, software y rutas internas.
+
+15
+00:01:30.828 --> 00:01:40.828
+Un truco: las ofertas de empleo son oro, porque si buscan un administrador de cierto antivirus avanzado y de cierta nube, ya sabes qué defensas tienen antes de entrar.
+
+16
+00:01:41.810 --> 00:01:48.147
+Hay que dibujar todo lo expuesto a Internet, incluido el shadow IT, esos activos que la empresa olvidó.
+
+17
+00:01:48.097 --> 00:01:56.322
+Los subdominios se descubren de forma pasiva en los registros de transparencia de certificados: cada certificado emitido revela nombres de host.
+
+18
+00:01:56.322 --> 00:02:01.947
+Buscadores como shodan y censys muestran dispositivos y servicios expuestos sin tocarlos.
+
+19
+00:02:01.947 --> 00:02:06.972
+Los registros de dominios y los números de sistema autónomo te dan los rangos de red.
+
+20
+00:02:06.972 --> 00:02:12.410
+Y hay que buscar los activos en la nube, como almacenamiento público mal configurado.
+
+21
+00:02:12.410 --> 00:02:22.122
+Con todo esto construyes el inventario: dominios, direcciones, servicios, paneles de acceso, redes privadas virtuales y portales de correo.
+
+22
+00:02:22.122 --> 00:02:25.197
+Cada uno es una posible vía de entrada.
+
+23
+00:02:26.148 --> 00:02:31.210
+Millones de credenciales se filtran cada año, y un atacante real las usa.
+
+24
+00:02:31.160 --> 00:02:34.885
+El Red Team también, dentro del alcance y la ley.
+
+25
+00:02:34.885 --> 00:02:44.573
+Servicios de búsqueda te dicen si un dominio aparece en brechas conocidas, y existen listas de pares usuario y contraseña filtrados que pueden seguir siendo válidos.
+
+26
+00:02:44.573 --> 00:02:46.498
+Por qué funcionan?
+
+27
+00:02:46.498 --> 00:02:52.823
+Porque la gente reutiliza contraseñas: una filtrada de otro servicio suele abrir el correo corporativo.
+
+28
+00:02:52.823 --> 00:03:04.860
+Una técnica clave es el password spraying: probar una sola contraseña típica, como el nombre de la empresa seguido del año, contra muchísimos usuarios, y hacerlo despacio para no bloquear ninguna cuenta.
+
+29
+00:03:04.860 --> 00:03:12.523
+Esto, por cierto, explica por qué el doble factor es tan importante, y por eso lo atacaremos en el próximo vídeo.
+
+30
+00:03:13.486 --> 00:03:18.273
+El reconocimiento no es acumular datos, es decidir la vía de entrada.
+
+31
+00:03:18.223 --> 00:03:22.261
+El senior sintetiza todo lo recogido en cuatro preguntas.
+
+32
+00:03:22.261 --> 00:03:26.086
+A quién hago phishing, según las personas perfiladas.
+
+33
+00:03:26.086 --> 00:03:31.523
+Qué defensas, qué correo y qué sistema de identidad usan, según la tecnología.
+
+34
+00:03:31.523 --> 00:03:35.848
+Hay un portal o una red privada virtual atacable en la superficie.
+
+35
+00:03:35.848 --> 00:03:38.986
+Y tengo credenciales filtradas que probar.
+
+36
+00:03:38.986 --> 00:03:43.511
+Con eso elige la vía de acceso inicial más silenciosa que funcione.
+
+37
+00:03:43.511 --> 00:03:56.323
+En la entrevista, ante la pregunta por dónde empezarías, la respuesta senior es: inteligencia pasiva de personas y superficie, cruzada con datos de brechas, para elegir el acceso inicial más sigiloso.
+
+38
+00:03:56.323 --> 00:03:58.911
+Vamos con el phishing moderno.

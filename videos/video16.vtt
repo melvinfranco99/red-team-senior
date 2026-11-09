@@ -1,0 +1,153 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:06.137
+En este vídeo verás que casi toda empresa es hoy híbrida: directorio local más nube.
+
+2
+00:00:06.087 --> 00:00:15.212
+Entenderás la identidad en la nube con Entra, por qué la identidad es el nuevo perímetro, los ataques típicos, y el puente peligroso entre lo local y la nube.
+
+3
+00:00:16.206 --> 00:00:24.868
+La empresa moderna ya no vive solo en su edificio, el directorio local: gran parte está en la nube, con el correo y los servicios en línea.
+
+4
+00:00:24.868 --> 00:00:29.581
+Esa identidad la gestiona Entra, antes llamado Azure Active Directory.
+
+5
+00:00:29.581 --> 00:00:32.156
+Las diferencias son grandes.
+
+6
+00:00:32.156 --> 00:00:38.481
+El directorio local usa Kerberos y ele dap; la nube usa protocolos de tokens, como oauth y saml.
+
+7
+00:00:38.481 --> 00:00:45.218
+El directorio local se accede desde la red interna; la nube, desde Internet, desde cualquier sitio.
+
+8
+00:00:45.218 --> 00:00:51.393
+El administrador total en local es el administrador de dominio; en la nube es el administrador global.
+
+9
+00:00:51.393 --> 00:00:55.581
+Una frase clave senior: la identidad es el nuevo perímetro.
+
+10
+00:00:55.581 --> 00:01:00.456
+En la nube no hay dentro y fuera; lo que importa es quién tiene un token válido.
+
+11
+00:01:01.432 --> 00:01:08.369
+En la nube no manejas tanto contraseñas como tokens: trozos de texto firmados que prueban que ya te autenticaste.
+
+12
+00:01:08.319 --> 00:01:11.532
+Robar el token equivale a ser el usuario.
+
+13
+00:01:11.532 --> 00:01:17.744
+Hay tokens de acceso y de actualización que dan entrada a servicios como el correo sin volver a loguearte.
+
+14
+00:01:17.744 --> 00:01:26.344
+En los equipos unidos a la nube existe una superllave, el token primario de actualización, que renueva tokens; robarla es muy potente.
+
+15
+00:01:26.344 --> 00:01:31.682
+Y las cookies de sesión son justo lo que roba el phishing de adversario en el medio que vimos.
+
+16
+00:01:31.682 --> 00:01:38.344
+Por eso el doble factor no basta: si roban un token o una cookie posterior al doble factor, ya están dentro.
+
+17
+00:01:38.344 --> 00:01:46.594
+La defensa fuerte combina llaves resistentes al phishing con el acceso condicional, que evalúa el dispositivo, la ubicación y el riesgo.
+
+18
+00:01:47.570 --> 00:01:50.095
+Veamos ataques típicos.
+
+19
+00:01:50.045 --> 00:01:59.982
+El consentimiento ilícito consiste en engañar al usuario para que apruebe una aplicación maliciosa con permisos sobre su correo y sus datos, sin robar la contraseña.
+
+20
+00:01:59.982 --> 00:02:07.207
+El phishing de código de dispositivo abusa de un flujo legítimo de autenticación para que la víctima autorice tu sesión.
+
+21
+00:02:07.207 --> 00:02:13.370
+El abuso de roles escala mediante roles mal asignados, por ejemplo un rol con demasiado poder.
+
+22
+00:02:13.370 --> 00:02:21.132
+Y el abuso de registros de aplicaciones aprovecha identidades de aplicación con permisos excesivos y secretos mal guardados.
+
+23
+00:02:21.132 --> 00:02:30.157
+Herramientas de enumeración y ataque en la nube son, por ejemplo, rodtuls, la suite de utilidades de directorio azul, o el ejecutor de grafo.
+
+24
+00:02:30.157 --> 00:02:33.307
+Conocerlas por su nombre sitúa tu nivel.
+
+25
+00:02:34.284 --> 00:02:44.359
+Lo más peligroso del entorno híbrido es el puente entre el directorio local y la nube, normalmente el servicio de sincronización azure a de connect, que sincroniza las identidades.
+
+26
+00:02:44.359 --> 00:02:53.971
+El flujo es: el directorio local, con su administrador de dominio; el servidor de sincronización, que guarda credenciales muy potentes; y la nube.
+
+27
+00:02:53.971 --> 00:02:59.759
+Comprometer ese servidor de sincronización puede dar el salto de local a nube, o al revés.
+
+28
+00:02:59.759 --> 00:03:05.259
+Es un objetivo de altísimo valor y debe tratarse como nivel cero, el más crítico.
+
+29
+00:03:05.259 --> 00:03:13.621
+En la entrevista, entender que el riesgo híbrido no es local o nube por separado, sino el puente que los une, te distingue como senior.
+
+30
+00:03:13.621 --> 00:03:19.021
+Es, muchas veces, el eslabón que conecta las dos mitades de un ataque moderno.
+
+31
+00:03:20.014 --> 00:03:25.139
+En el informe, la seguridad de identidad en la nube se resume en varias ideas.
+
+32
+00:03:25.089 --> 00:03:31.889
+Acceso condicional bien diseñado, con doble factor fuerte, dispositivos conformes y bloqueo por riesgo.
+
+33
+00:03:31.889 --> 00:03:38.401
+Mínimo privilegio en los roles, con muy pocos administradores globales y cuentas de emergencia vigiladas.
+
+34
+00:03:38.401 --> 00:03:43.939
+Revisar los consentimientos de aplicaciones y los permisos de las identidades de aplicación.
+
+35
+00:03:43.939 --> 00:03:47.701
+Proteger el puente híbrido como un activo de nivel cero.
+
+36
+00:03:47.701 --> 00:03:54.364
+Y monitorizar inicios de sesión y tokens anómalos, como un viaje imposible entre dos países en minutos.
+
+37
+00:03:54.364 --> 00:04:03.151
+El Red Team en la nube piensa en identidades y permisos, no en puertos: el escaneo de red de antaño se vuelve la pregunta quién puede asumir qué rol.
+
+38
+00:04:03.151 --> 00:04:06.576
+Vamos con la nube de Amazon y la exfiltración.

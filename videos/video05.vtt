@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.637
+En este vídeo verás el acceso inicial más realista: la ingeniería social.
+
+2
+00:00:05.587 --> 00:00:15.200
+Cómo se diseña una campaña de phishing creíble, y lo más importante hoy, cómo los atacantes saltan el doble factor robando la sesión con proxies tipo evilginx.
+
+3
+00:00:15.200 --> 00:00:19.125
+Todo con autorización estricta y cuidado con las personas.
+
+4
+00:00:20.118 --> 00:00:26.293
+La ingeniería social explota la confianza, la prisa y la autoridad, no un fallo de software.
+
+5
+00:00:26.243 --> 00:00:31.555
+Es la vía de entrada número uno en ataques reales, porque siempre funciona en alguien.
+
+6
+00:00:31.555 --> 00:00:48.855
+Las palancas psicológicas son conocidas: la autoridad, haciéndose pasar por el departamento de informática o por un directivo; la urgencia, avisando de que la cuenta se bloqueará en dos horas; el miedo, informando de actividad sospechosa; o la curiosidad, con una supuesta nómina o premio.
+
+7
+00:00:48.855 --> 00:00:59.543
+El senior diseña un pretexto coherente con el reconocimiento: si sabes que la empresa usa un entorno de Microsoft, el cebo imita una alerta de Microsoft, no de un banco cualquiera.
+
+8
+00:01:00.520 --> 00:01:06.432
+Montar phishing creíble tiene varias piezas, y cada una puede delatar o salvar la campaña.
+
+9
+00:01:06.382 --> 00:01:11.745
+Primero, un dominio parecido al real, envejecido y con buena reputación.
+
+10
+00:01:11.745 --> 00:01:20.632
+Segundo, un correo técnicamente bien autenticado, con los mecanismos de validación de correo bien puestos, para no caer en la carpeta de spam.
+
+11
+00:01:20.632 --> 00:01:26.395
+Tercero, el pretexto y el cebo: un mensaje creíble con un enlace o un adjunto.
+
+12
+00:01:26.395 --> 00:01:31.770
+Cuarto, la página de aterrizaje, que captura credenciales o entrega el payload.
+
+13
+00:01:31.770 --> 00:01:37.882
+Y quinto, el seguimiento: quién abrió, quién pinchó, quién introdujo sus datos.
+
+14
+00:01:37.882 --> 00:01:44.745
+Se usan herramientas de gestión de campañas, y siempre, siempre, con autorización explícita del cliente.
+
+15
+00:01:45.698 --> 00:01:49.535
+Hace años bastaba con capturar usuario y contraseña.
+
+16
+00:01:49.485 --> 00:01:57.060
+Hoy casi todo tiene doble factor, así que los atacantes lo esquivan robando la sesión ya autenticada, no la contraseña.
+
+17
+00:01:57.060 --> 00:01:59.935
+Es el ataque de adversario en el medio.
+
+18
+00:01:59.935 --> 00:02:05.085
+Funciona así: la víctima llega a una página falsa que en realidad es un proxy.
+
+19
+00:02:05.085 --> 00:02:10.235
+Escribe su usuario y contraseña, y el proxy los reenvía al servicio real.
+
+20
+00:02:10.235 --> 00:02:16.585
+El servicio pide el doble factor, la víctima lo aprueba, y el servicio devuelve una cookie de sesión.
+
+21
+00:02:16.585 --> 00:02:22.598
+Entonces el proxy roba esa cookie, que equivale a estar ya dentro con el doble factor superado.
+
+22
+00:02:22.598 --> 00:02:28.423
+Por eso el doble factor clásico, por mensaje o por aplicación, no detiene este ataque.
+
+23
+00:02:29.412 --> 00:02:32.174
+Hay vectores más allá del correo.
+
+24
+00:02:32.124 --> 00:02:37.674
+El vishing es una llamada telefónica suplantando al soporte técnico, y es muy efectivo.
+
+25
+00:02:37.674 --> 00:02:44.087
+El quishing usa códigos cu erre para llevar a la página maliciosa, saltándose los filtros de correo.
+
+26
+00:02:44.087 --> 00:03:01.699
+La fatiga del doble factor consiste en enviar notificaciones push sin parar hasta que la víctima aprueba para que cesen. Y, como defensa, la clave: las llaves físicas tipo fido dos, o passkeys, son resistentes al phishing, porque están ligadas al dominio real y no se dejan interceptar por un proxy.
+
+27
+00:03:01.699 --> 00:03:07.924
+Combinadas con el acceso condicional, son lo que de verdad frena al adversario en el acceso inicial.
+
+28
+00:03:08.902 --> 00:03:15.027
+La ingeniería social toca a personas reales, así que el senior la ejecuta con especial cuidado.
+
+29
+00:03:14.977 --> 00:03:20.777
+Requiere autorización escrita y explícita, porque no siempre está en el alcance por defecto.
+
+30
+00:03:20.777 --> 00:03:29.027
+No se causa daño reputacional ni emocional gratuito: nada de cebos crueles, como despidos falsos o emergencias familiares.
+
+31
+00:03:29.027 --> 00:03:34.489
+Los datos capturados se tratan con máxima confidencialidad y se borran tras el informe.
+
+32
+00:03:34.489 --> 00:03:39.239
+Y el objetivo es medir y mejorar, no humillar a los empleados que piquen.
+
+33
+00:03:39.239 --> 00:03:47.039
+En el informe, el phishing se reporta como una métrica y una oportunidad de formación, nunca señalando a personas concretas.
+
+34
+00:03:47.039 --> 00:03:50.214
+Esa madurez es parte del profesionalismo.
+
+35
+00:03:50.214 --> 00:03:52.914
+Pasemos al desarrollo de payloads.

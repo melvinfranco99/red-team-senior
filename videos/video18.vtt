@@ -1,0 +1,165 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:05.712
+En este vídeo verás el entregable que da valor a semanas de trabajo: el informe.
+
+2
+00:00:05.662 --> 00:00:15.362
+Cómo contar la historia del ataque, traducirla a impacto de negocio, priorizar la remediación, y convertir el ejercicio en mejora real mediante el purple team.
+
+3
+00:00:16.350 --> 00:00:20.387
+El cliente no paga por el hackeo: paga por el informe.
+
+4
+00:00:20.337 --> 00:00:26.612
+Un acceso brillante mal explicado no vale nada; un hallazgo medio bien comunicado mejora la empresa.
+
+5
+00:00:26.612 --> 00:00:30.812
+Por eso el senior dedica tanto esfuerzo a escribir como a atacar.
+
+6
+00:00:30.812 --> 00:00:35.450
+La regla de oro es que el informe lo leen dos públicos muy distintos.
+
+7
+00:00:35.450 --> 00:00:41.487
+La dirección quiere impacto y decisiones: qué se intentó, si se logró, y qué deben hacer.
+
+8
+00:00:41.487 --> 00:00:47.200
+Los técnicos quieren el detalle para arreglarlo: qué falló exactamente y cómo corregirlo.
+
+9
+00:00:47.200 --> 00:00:52.662
+El documento debe servir a ambos, y por eso tiene secciones pensadas para cada uno.
+
+10
+00:00:52.662 --> 00:00:57.312
+Escribir bien no es un extra: es la mitad del trabajo de un senior.
+
+11
+00:00:58.264 --> 00:01:00.401
+Veamos la estructura.
+
+12
+00:01:00.351 --> 00:01:09.176
+El resumen ejecutivo es para la dirección: qué se intentó, si se logró, el impacto de negocio y tres a cinco mensajes clave, sin jerga.
+
+13
+00:01:09.176 --> 00:01:17.401
+La narrativa del ataque es la historia: cómo se entró y se llegó al objetivo, paso a paso, mapeada al catálogo de técnicas.
+
+14
+00:01:17.401 --> 00:01:23.401
+Los hallazgos técnicos describen cada debilidad con su evidencia, su riesgo y cómo corregirla.
+
+15
+00:01:23.401 --> 00:01:29.101
+El análisis de detección cuenta qué detectó el equipo defensor y qué no, con su cobertura.
+
+16
+00:01:29.101 --> 00:01:33.026
+Y las recomendaciones son el plan de remediación priorizado.
+
+17
+00:01:33.026 --> 00:01:42.051
+La narrativa es lo que distingue un informe de Red Team de un pentest: no es una lista de fallos, es la historia de cómo un atacante llegó a la joya de la corona.
+
+18
+00:01:43.034 --> 00:01:48.959
+La habilidad senior más valorada es convertir lo técnico en consecuencias que la dirección entienda.
+
+19
+00:01:48.909 --> 00:01:57.884
+En vez de escribir Kerberoasting en doce cuentas de servicio, escribes: credenciales de servicio débiles permitieron escalar hasta el control del dominio.
+
+20
+00:01:57.884 --> 00:02:05.271
+En vez de ejecución remota de código en el portal, escribes: un atacante podría manipular transferencias de clientes.
+
+21
+00:02:05.271 --> 00:02:13.996
+Y en vez de almacén de objetos público, escribes: exposición de datos de dos millones de clientes, con riesgo regulatorio y reputacional.
+
+22
+00:02:13.996 --> 00:02:20.984
+El comité no decide sobre jerga técnica; decide sobre dinero, clientes, cumplimiento y reputación.
+
+23
+00:02:20.984 --> 00:02:25.996
+Habla su idioma, y tus hallazgos se convertirán en decisiones y presupuesto.
+
+24
+00:02:26.988 --> 00:02:31.850
+Un informe con cincuenta recomendaciones sin orden abruma y no se ejecuta.
+
+25
+00:02:31.800 --> 00:02:33.863
+El senior prioriza.
+
+26
+00:02:33.863 --> 00:02:42.750
+Señala las victorias rápidas: cosas de alto impacto y bajo coste, como arreglar una plantilla de certificados o rotar una contraseña de servicio.
+
+27
+00:02:42.750 --> 00:02:50.750
+Ataca las causas raíz, no los síntomas: recomendar un modelo de administración por niveles en vez de parchear un solo equipo.
+
+28
+00:02:50.750 --> 00:02:56.888
+Incluye mejoras de detección, no solo cerrar agujeros: deberíais haber detectado esto aquí.
+
+29
+00:02:56.888 --> 00:03:02.838
+Y es realista: recomendaciones que la empresa pueda aplicar de verdad, en un orden sensato.
+
+30
+00:03:02.838 --> 00:03:10.575
+Una frase senior: no entrego cincuenta fallos, entrego cinco cambios que cierran el ochenta por ciento de los caminos.
+
+31
+00:03:10.575 --> 00:03:14.313
+Eso es pensar en la defensa, no solo en el ataque.
+
+32
+00:03:15.286 --> 00:03:20.336
+El ejercicio termina con reuniones que convierten el informe en mejora real.
+
+33
+00:03:20.286 --> 00:03:24.923
+El debrief ejecutivo transmite el resumen y las decisiones a la dirección.
+
+34
+00:03:24.923 --> 00:03:32.173
+El debrief técnico repasa el detalle con el equipo defensor, comparando la línea temporal del ataque con lo que detectaron.
+
+35
+00:03:32.173 --> 00:03:38.073
+Luego viene la joya: el purple team, donde el equipo rojo y el azul trabajan juntos.
+
+36
+00:03:38.073 --> 00:03:44.673
+El rojo reproduce cada técnica, mapeada al catálogo, y el azul ajusta sus detecciones en directo.
+
+37
+00:03:44.673 --> 00:03:49.473
+Y, finalmente, un re-test verifica que la remediación funciona.
+
+38
+00:03:49.473 --> 00:03:54.486
+Así el cliente no solo tapa agujeros: aprende a ver al próximo atacante.
+
+39
+00:03:54.486 --> 00:03:59.723
+La meta final de un buen Red Team no es ganar, es que el cliente salga más fuerte.
+
+40
+00:03:59.723 --> 00:04:02.198
+El senior se mide por eso.
+
+41
+00:04:02.198 --> 00:04:05.998
+Vamos al último vídeo: liderazgo y entrevista.

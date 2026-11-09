@@ -1,0 +1,113 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:13.900
+En este vídeo juntamos las técnicas que convierten un punto de apoyo en control total del dominio: el abuso de los servicios de certificados, el ataque de sincronización que roba todas las contraseñas, y los tickets dorado y plateado.
+
+2
+00:00:13.900 --> 00:00:16.837
+Y cerramos siempre con la remediación.
+
+3
+00:00:17.814 --> 00:00:27.089
+Tras el acceso inicial y algún robo de credenciales, el objetivo es controlar el dominio, es decir, ser administrador de dominio o equivalente.
+
+4
+00:00:27.089 --> 00:00:31.889
+Hay varias autopistas para lograrlo, y veremos las más importantes hoy.
+
+5
+00:00:31.889 --> 00:00:40.714
+Una idea senior clave: muchas de estas técnicas no explotan un fallo de programación, sino configuraciones por defecto o permisos mal puestos.
+
+6
+00:00:40.714 --> 00:00:44.614
+Por eso son tan comunes y tan reportadas en los informes.
+
+7
+00:00:44.614 --> 00:00:51.801
+No hace falta un exploit sofisticado: basta con que alguien dejó una plantilla mal configurada o unos permisos de más.
+
+8
+00:00:51.801 --> 00:00:57.776
+Esto, que parece un detalle, es a menudo la diferencia entre un apoyo y el control total.
+
+9
+00:00:58.768 --> 00:01:06.630
+Los servicios de certificados del directorio, que abreviamos a de ce ese, son la entidad que emite certificados internos.
+
+10
+00:01:06.630 --> 00:01:16.255
+Si una plantilla de certificado está mal configurada, un usuario normal puede pedir un certificado que le identifique como otro usuario, incluido un administrador.
+
+11
+00:01:16.255 --> 00:01:26.518
+Las configuraciones peligrosas se catalogan con códigos como e ese ce uno o e ese ce ocho, descritas en la investigación llamada certificado pre comprometido.
+
+12
+00:01:26.518 --> 00:01:31.005
+La herramienta certipy encuentra y abusa de las plantillas vulnerables.
+
+13
+00:01:31.005 --> 00:01:39.318
+Y lo grave es que un certificado robado permite autenticarse como la víctima de forma persistente, porque los certificados duran mucho tiempo.
+
+14
+00:01:39.318 --> 00:01:47.280
+Este ha sido uno de los vectores más explotados de los últimos años, porque estaba mal configurado por defecto en muchísimas empresas.
+
+15
+00:01:48.266 --> 00:01:53.391
+El ataque de sincronización de controlador, de ce sync, es demoledor.
+
+16
+00:01:53.341 --> 00:02:03.366
+Si tienes ciertos permisos, los que tienen los controladores de dominio, puedes pedirle a un controlador que te replique las contraseñas, como si fueras otro controlador.
+
+17
+00:02:03.366 --> 00:02:09.116
+Es decir, le dices: oye, soy otro controlador, mándame los hashes.
+
+18
+00:02:09.116 --> 00:02:17.703
+Y obtienes, entre otros, el hash de la cuenta krbtgt, que es el premio gordo, porque con él se forjan tickets dorados.
+
+19
+00:02:17.703 --> 00:02:28.553
+Lo peligroso es que este ataque no requiere entrar físicamente en el controlador: solo tener el permiso adecuado, que se consigue al ser administrador de dominio o por un permiso mal puesto.
+
+20
+00:02:28.553 --> 00:02:32.366
+Es la forma más limpia de hacerse con las llaves del reino.
+
+21
+00:02:33.324 --> 00:02:37.586
+Con las credenciales robadas se pueden forjar tickets falsos.
+
+22
+00:02:37.536 --> 00:02:51.574
+El ticket dorado es una pulsera de identidad falsa, firmada con el hash de la cuenta krbtgt: da acceso como cualquiera a todo el dominio, y es una persistencia brutal, porque funciona aunque cambien las contraseñas de los administradores.
+
+23
+00:02:51.574 --> 00:03:02.249
+El ticket plateado es una entrada de servicio falsa para un servicio concreto: da acceso solo a ese servicio, pero es más sigiloso, porque no pasa por el controlador de dominio.
+
+24
+00:03:02.249 --> 00:03:12.249
+Por eso, tras un compromiso serio, la recomendación es rotar la contraseña de la cuenta krbtgt dos veces, lo que invalida los tickets dorados forjados.
+
+25
+00:03:13.222 --> 00:03:36.722
+Juntando todo el nivel, una cadena típica de dominación de dominio sería: entras con un usuario de dominio por phishing; con bloodhound encuentras la ruta; robas credenciales o certificados con Kerberoasting o abuso de certificados; escalas hasta tener permisos de sincronización; haces el ataque de sincronización sobre la cuenta krbtgt, y ya tienes control total; y alcanzas las joyas de la corona.
+
+26
+00:03:36.722 --> 00:03:51.284
+Pero el senior siempre cierra con remediación: modelo de administración por niveles, cuentas sin privilegios excesivos, plantillas de certificados revisadas, monitorización del ataque de sincronización, y rotación de la cuenta krbtgt.
+
+27
+00:03:51.284 --> 00:03:56.222
+Todo esto se practica solo en laboratorios propios o engagements autorizados.
+
+28
+00:03:56.222 --> 00:03:58.972
+Pasamos a la nube y el movimiento.

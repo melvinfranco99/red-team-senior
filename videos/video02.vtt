@@ -1,0 +1,149 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:09.375
+En este vídeo aprenderás a imitar a un adversario concreto en vez de atacar al azar, y a hablar el idioma común de toda la industria: el framework MITRE Attack.
+
+2
+00:00:09.375 --> 00:00:17.387
+Verás la diferencia entre táctica y técnica, la pirámide del dolor, y cómo mapear tu operación para el informe y el purple team.
+
+3
+00:00:18.366 --> 00:00:26.991
+En vez de atacar como sea, el Red Team senior imita a un atacante real concreto: por ejemplo, el grupo que suele atacar a la banca.
+
+4
+00:00:26.991 --> 00:00:33.278
+Es como un simulacro de incendio que reproduce exactamente cómo empezaría un fuego real en ese edificio.
+
+5
+00:00:33.278 --> 00:00:39.066
+El insumo viene de la inteligencia de amenazas: informes que describen cómo opera cada grupo.
+
+6
+00:00:39.066 --> 00:00:43.066
+El senior traduce ese informe a un plan de ataque realista.
+
+7
+00:00:43.066 --> 00:00:52.816
+Así, la pregunta deja de ser si tenemos vulnerabilidades, y pasa a ser: si nos ataca este grupo concreto, que usa estas técnicas, lo pararíamos.
+
+8
+00:00:52.816 --> 00:00:55.653
+Eso es la emulación de adversarios.
+
+9
+00:00:56.632 --> 00:01:03.019
+MITRE Attack es un catálogo gigante de todo lo que hacen los atacantes reales, organizado como una tabla.
+
+10
+00:01:02.969 --> 00:01:06.869
+Es el idioma común entre el equipo de ataque y el de defensa.
+
+11
+00:01:06.869 --> 00:01:10.182
+Hay dos conceptos que debes separar muy bien.
+
+12
+00:01:10.182 --> 00:01:19.144
+La táctica es el porqué: el objetivo del atacante en esa fase, como acceso inicial, persistencia o exfiltración; son las columnas.
+
+13
+00:01:19.144 --> 00:01:25.807
+La técnica es el cómo: la forma concreta de lograr esa táctica, como phishing o inyección de procesos.
+
+14
+00:01:25.807 --> 00:01:30.519
+Y dentro de una técnica hay subtécnicas, que son variantes concretas.
+
+15
+00:01:30.519 --> 00:01:36.180
+La regla para recordarlo: táctica es el qué quiero, técnica es el cómo lo hago.
+
+16
+00:01:37.130 --> 00:01:42.555
+Las columnas de la matriz forman, más o menos, la línea temporal de un ataque.
+
+17
+00:01:42.505 --> 00:01:47.242
+Primero el atacante prepara: reconocimiento y desarrollo de recursos.
+
+18
+00:01:47.242 --> 00:01:50.742
+Luego entra: acceso inicial y ejecución.
+
+19
+00:01:50.742 --> 00:01:55.192
+Después se afianza: persistencia y escalada de privilegios.
+
+20
+00:01:55.192 --> 00:02:01.230
+A continuación se oculta y roba credenciales: evasión de defensas y acceso a credenciales.
+
+21
+00:02:01.230 --> 00:02:06.192
+Entonces mira alrededor y se mueve: descubrimiento y movimiento lateral.
+
+22
+00:02:06.192 --> 00:02:11.430
+Y remata: recolección, mando y control, exfiltración e impacto.
+
+23
+00:02:11.430 --> 00:02:18.292
+Si te sabes esta secuencia, puedes situar cualquier técnica que te mencionen y hablar con propiedad en la entrevista.
+
+24
+00:02:19.260 --> 00:02:23.447
+No todos los rastros de un atacante cuestan lo mismo de cambiar.
+
+25
+00:02:23.397 --> 00:02:31.510
+La pirámide del dolor los ordena de abajo, lo fácil de cambiar y poco útil para el defensor, a arriba, lo difícil y muy útil.
+
+26
+00:02:31.510 --> 00:02:37.085
+En la base está el hash de un fichero: el atacante recompila y lo cambia en segundos.
+
+27
+00:02:37.085 --> 00:02:42.660
+Encima, las direcciones IP y los dominios: levanta otra infraestructura y listo.
+
+28
+00:02:42.660 --> 00:02:46.835
+Más arriba, sus herramientas: cambiarlas ya le cuesta.
+
+29
+00:02:46.835 --> 00:02:54.785
+Y en la cima, sus tácticas, técnicas y procedimientos, es decir, su forma de operar: cambiar eso es durísimo.
+
+30
+00:02:54.785 --> 00:03:05.335
+Por eso un buen Red Team emula el comportamiento, los TTP, y no indicadores sueltos: ayuda al defensor a detectar conductas, que es lo que de verdad frena a un adversario.
+
+31
+00:03:06.310 --> 00:03:11.772
+Durante y después de la operación, el senior etiqueta cada acción con su técnica de Attack.
+
+32
+00:03:11.722 --> 00:03:22.885
+Por ejemplo: el acceso inicial fue spearphishing con adjunto; la ejecución, PowerShell; la evasión, inyección de procesos; el robo de credenciales, Kerberoasting.
+
+33
+00:03:22.885 --> 00:03:28.710
+Con este mapa, el cliente ve exactamente qué detectó y qué no, técnica a técnica.
+
+34
+00:03:28.710 --> 00:03:34.035
+Eso convierte el informe en algo accionable y es la base del ejercicio de purple team.
+
+35
+00:03:34.035 --> 00:03:39.185
+Herramientas como el Attack Navigator lo pintan como un mapa de calor de cobertura.
+
+36
+00:03:39.185 --> 00:03:43.510
+Dominar este lenguaje es, hoy, parte del trabajo.
+
+37
+00:03:43.510 --> 00:03:46.435
+Pasemos a la inteligencia de amenazas.

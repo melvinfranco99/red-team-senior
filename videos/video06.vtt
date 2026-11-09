@@ -1,0 +1,157 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.800
+En este vídeo verás qué entregas tras el clic.
+
+2
+00:00:03.750 --> 00:00:11.825
+La cadena que va de un fichero hasta un beacon, los formatos de entrega modernos, y la diferencia entre shellcode, loader y stager.
+
+3
+00:00:11.825 --> 00:00:16.412
+Y por qué el senior prueba su payload antes de dispararlo contra el cliente.
+
+4
+00:00:17.406 --> 00:00:24.518
+Un payload de acceso inicial no es un solo fichero mágico: es una cadena en la que cada eslabón esquiva un control.
+
+5
+00:00:24.518 --> 00:00:30.018
+Primero la entrega: el fichero llega por correo, enlace o memoria usb.
+
+6
+00:00:30.018 --> 00:00:34.243
+Luego la ejecución: la víctima lo abre y se ejecuta código.
+
+7
+00:00:34.243 --> 00:00:39.343
+Después el loader, que trae y prepara el payload real evadiendo defensas.
+
+8
+00:00:39.343 --> 00:00:44.081
+Ese payload suele ser shellcode, un código que se inyecta en memoria.
+
+9
+00:00:44.081 --> 00:00:48.856
+Y, finalmente, el beacon llama a casa: ya hay control.
+
+10
+00:00:48.856 --> 00:00:57.181
+El senior piensa en cada eslabón: pasa el filtro de correo, lo bloquea la protección de Windows, lo detecta el antivirus al ejecutar.
+
+11
+00:00:57.181 --> 00:01:00.668
+Diseñar esto es el arte del acceso inicial.
+
+12
+00:01:01.648 --> 00:01:08.610
+Microsoft fue cerrando los clásicos, bloqueando las macros por defecto, así que los formatos evolucionaron.
+
+13
+00:01:08.560 --> 00:01:14.435
+Las macros de ofimática ejecutan código al abrir el documento, pero hoy están muy vigiladas.
+
+14
+00:01:14.435 --> 00:01:25.085
+Los contenedores como las imágenes iso triunfaron porque evitaban que el fichero heredara la marca de la web, esa etiqueta que Windows pone a lo descargado de Internet para tratarlo con recelo.
+
+15
+00:01:25.085 --> 00:01:32.223
+Los accesos directos, los ficheros ele ene te, parecen un acceso normal pero en realidad lanzan un comando.
+
+16
+00:01:32.223 --> 00:01:37.110
+Y los instaladores troyanizados mezclan una aplicación legítima con el payload.
+
+17
+00:01:37.110 --> 00:01:42.035
+La clave de muchos de estos trucos es precisamente no heredar la marca de la web.
+
+18
+00:01:42.986 --> 00:01:46.423
+Tres términos que un senior separa con soltura.
+
+19
+00:01:46.373 --> 00:01:55.198
+El shellcode es el código máquina compacto que, al ejecutarse en memoria, da control, por ejemplo levantando un beacon: sería la carga.
+
+20
+00:01:55.198 --> 00:02:02.411
+El loader es el programa que coloca y ejecuta ese shellcode evadiendo defensas: sería el mecanismo que la coloca.
+
+21
+00:02:02.411 --> 00:02:13.036
+El stager es un loader minúsculo que descarga el payload grande en varios pasos; lo contrario es un payload sin fases, que va todo de una vez, más grande pero con menos llamadas de red.
+
+22
+00:02:13.036 --> 00:02:21.561
+La decisión senior es elegir entre uno sigiloso en la entrega pero con una llamada extra detectable, o uno de una sola pieza con menos ruido de red.
+
+23
+00:02:21.561 --> 00:02:24.086
+Se elige según el entorno.
+
+24
+00:02:25.068 --> 00:02:31.343
+Un buen loader no oculta un virus: cambia cómo se ejecuta para no parecerse a lo que el antivirus vigila.
+
+25
+00:02:31.293 --> 00:02:34.718
+A alto nivel, se apoya en varias ideas.
+
+26
+00:02:34.718 --> 00:02:40.380
+La ejecución en memoria: no escribir el payload en disco, donde el antivirus lo escanea.
+
+27
+00:02:40.380 --> 00:02:47.230
+El cifrado: el payload va cifrado y solo se descifra en el momento, para que la firma estática no coincida.
+
+28
+00:02:47.230 --> 00:02:53.693
+El vivir de la tierra: usar binarios legítimos del propio Windows en vez de un ejecutable sospechoso.
+
+29
+00:02:53.693 --> 00:03:00.093
+Y silenciar los sensores que Windows usa para inspeccionar scripts, que veremos en el nivel de evasión.
+
+30
+00:03:00.093 --> 00:03:05.418
+El payload exitoso es el que no destaca: parece una tarea normal del sistema.
+
+31
+00:03:05.418 --> 00:03:09.405
+La creatividad está en mezclarse, no en ser más fuerte.
+
+32
+00:03:10.366 --> 00:03:15.916
+Antes de disparar contra el cliente, el senior prueba su payload en un laboratorio idéntico.
+
+33
+00:03:15.866 --> 00:03:19.778
+Construye el loader, el shellcode y el pretexto.
+
+34
+00:03:19.778 --> 00:03:25.703
+Lo prueba contra el mismo antivirus avanzado que usa el cliente, montado en su propio laboratorio.
+
+35
+00:03:25.703 --> 00:03:28.828
+Si lo detecta, ajusta la técnica.
+
+36
+00:03:28.828 --> 00:03:34.341
+Y valida la seguridad operacional: qué logs genera, qué vería el equipo defensor.
+
+37
+00:03:34.341 --> 00:03:42.216
+Nunca quemes un payload sin probar: si saltan las alarmas en el primer correo, pierdes el factor sorpresa de toda la operación.
+
+38
+00:03:42.216 --> 00:03:46.578
+En la entrevista, demostrar este rigor previo es muy valorado.
+
+39
+00:03:46.578 --> 00:03:51.803
+Con esto cerramos el acceso inicial; pasamos a la evasión y el mando y control.
